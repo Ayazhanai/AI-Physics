@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Physics Lab</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #eef4ff;
+  margin: 0;
+  text-align: center;
+  color: #183153;
+}
+header {
+  background: #173b70;
+  color: white;
+  padding: 30px;
+}
+h1 { font-size: 32px; }
+.container {
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 25px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px #ccd5e5;
+}
+input {
+  padding: 12px;
+  width: 150px;
+  font-size: 18px;
+  margin: 10px;
+  border: 2px solid #b7c9e8;
+  border-radius: 10px;
+}
+button {
+  background: #2468c9;
+  color: white;
+  border: none;
+  padding: 13px 25px;
+  border-radius: 10px;
+  font-size: 17px;
+  cursor: pointer;
+}
+button:hover { background: #174b96; }
+#result {
+  font-size: 24px;
+  color: #16834a;
+  margin: 20px;
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>🚀 AI PHYSICS LAB</h1>
+<p>Болашақтың виртуалды физика зертханасы</p>
+</header>
+
+<div class="container">
+<h2>👨‍🏫 Қош келдің, жас физик!</h2>
+<p>Бүгін біз «Тығыздық» тақырыбын зерттейміз.</p>
+<h3>🧪 Виртуалды зертхана</h3>
+
+<p>Дененің массасын енгіз (г):</p>
+<input type="number" id="mass" value="100">
+
+<p>Дененің көлемін енгіз (см³):</p>
+<input type="number" id="volume" value="20">
+
+<br><br>
+<button onclick="calculate()">Есептеу</button>
+
+<div id="result"></div>
+<p>Формула: ρ = m / V</p>
+</div>
+
+<div class="container">
+<h2>🧠 Біліміңді тексер!</h2>
+<p>Тығыздықты қандай формуламен есептейміз?</p>
+<button onclick="check(true)">ρ = m / V</button>
+<button onclick="check(false)">ρ = m × V</button>
+<div id="answer"></div>
+</div>
+
+<script>
+function calculate() {
+  let m = Number(document.getElementById("mass").value);
+  let v = Number(document.getElementById("volume").value);
+  let result = document.getElementById("result");
+
+  if (m <= 0 || v <= 0) {
+    result.innerHTML = "Мәндерді дұрыс енгіз!";
+    return;
+  }
+
+  let density = m / v;
+  result.innerHTML = "Тығыздық = " + density.toFixed(2) + " г/см³";
+}
+
+function check(correct) {
+  document.getElementById("answer").innerHTML =
+    correct ? "🎉 Дұрыс! Жарайсың, жас физик!" :
+    "🤔 Қайта ойланып көр! Формулаға назар аудар.";
+}
+</script>
+
+</body>
+</html>
