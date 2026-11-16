@@ -105,6 +105,33 @@ function check(correct) {
     "🤔 Қайта ойланып көр! Формулаға назар аудар.";
 }
 </script>
+<div class="container">
+  <h2>👨‍🏫 Профессор Тығыздық</h2>
+  <p>Сәлем, жас физик! Мен сенің виртуалды ұстазыңмын.</p>
 
+  <p>Бүгін қандай тақырыпты үйренеміз?</p>
+
+  <button onclick="professorAnswer(1)">Тығыздық дегеніміз не?</button>
+  <button onclick="professorAnswer(2)">Тығыздық формуласы қандай?</button>
+  <button onclick="professorAnswer(3)">Өлшем бірлігі қандай?</button>
+
+  <p id="professor"></p>
+</div>
+
+<script>
+function professorAnswer(question) {
+  let answer = "";
+
+  if (question === 1) {
+    answer = "Тығыздық – дененің бірлік көлеміндегі массасы.";
+  } else if (question === 2) {
+    answer = "Тығыздық формуласы: ρ = m / V";
+  } else {
+    answer = "Тығыздықтың өлшем бірлігі: кг/м³ немесе г/см³.";
+  }
+
+  document.getElementById("professor").innerHTML = answer;
+}
+</script>
 </body>
 </html>
